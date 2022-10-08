@@ -1,0 +1,539 @@
+[INFO] --------------------------< edu.cmu.stl:stl >---------------------------
+[INFO] Building stl 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:3.0.0:java (default-cli) @ stl ---
+Starting Organ Delivery Case Study...
+arming and taking off
+starting offboard mode
+[delivery planning] distance to destination: 244.4379541053051
+[delivery planning] curr lat: 40.4446821 curr lon-79.945438
+[safe landing] remaining battery = 94.0
+starting commands: N:-1.7292874 E:6.7830353 D:0.0 Yaw:0.0
+[main] state: IN_AIR
+[delivery planning] distance to destination: 229.99445818016807
+[delivery planning] curr lat: 40.4446358 curr lon-79.9452773
+[safe landing] remaining battery = 79.0
+starting commands: N:-1.6812063 E:6.7951117 D:0.0 Yaw:0.0
+[main] state: IN_AIR
+[delivery planning] distance to destination: 200.6272091118077
+[delivery planning] curr lat: 40.4445653 curr lon-79.9449427
+[safe landing] remaining battery = 63.0
+[safe landing] Landing threshold (70.0) reached. Force landing now!
+[main] conflict detected! resolver invoked!
+Test:: CompExpr(
+    <=
+    Id(battery)
+    Int(70)
+)
+Test:: CompExpr(
+    >
+    Id(battery)
+    Int(70)
+)
+Test:: CompExpr(
+    <=
+    Id(battery)
+    Int(70)
+)
+Test:: CompExpr(
+    >
+    Id(battery)
+    Int(70)
+)
+Test:: CompExpr(
+    <=
+    Id(battery)
+    Int(70)
+)
+Test:: CompExpr(
+    >
+    Id(battery)
+    Int(70)
+)
+Test:: CompExpr(
+    <=
+    Id(battery)
+    Int(70)
+)
+Test:: CompExpr(
+    >
+    Id(battery)
+    Int(70)
+)
+AST Obtained in STLEncoder(Main): [TempExpr(
+    G
+    Int(0)
+    Int(1)
+    CompExpr(
+    >=
+    Id(remaining_range_upon_delivery)
+    Int(0)
+)
+)
+, TempExpr(
+    G
+    Int(0)
+    Int(1)
+    LogicExpr(
+    imp
+    CompExpr(
+    <=
+    Id(battery)
+    Int(70)
+)
+    TempExpr(
+    F
+    Int(0)
+    Int(1)
+    CompExpr(
+    =
+    Id(is_landing)
+    Int(1)
+)
+)
+
+)
+)
+]
+Signal Declaration Obtained in STLEncoder(Main): int: SIGNAL_LENGTH = 3;
+array[1..SIGNAL_LENGTH] of var 0.0..1000.0: sig_var_remaining_range_upon_delivery;
+array[1..SIGNAL_LENGTH] of var 0.0..1000.0: sig_var_is_landing;
+array[1..SIGNAL_LENGTH] of var 0.0..1000.0: sig_var_battery;
+
+STL Robustness Obtained in STLEncoder(Main): % BEGIN OF STL ENCODING
+int: M = 1000;
+% BEGIN OF STL ENCODING FOR rho_stl_1
+var float: rho_stl_1;
+var float: rho_1;
+constraint rho_1 <= (sig_var_remaining_range_upon_delivery[1])-(0);
+constraint rho_1 >= (sig_var_remaining_range_upon_delivery[1])-(0);
+var float: rho_2;
+constraint rho_2 <= (sig_var_remaining_range_upon_delivery[2])-(0);
+constraint rho_2 >= (sig_var_remaining_range_upon_delivery[2])-(0);
+% Globally encoding
+array[1..2] of var 0..1: p_3;
+constraint sum(p_3) = 1;
+constraint rho_stl_1 <= rho_1;
+constraint rho_stl_1 <= rho_2;
+constraint rho_stl_1 >= rho_1 - (1 - p_3[1]) * M;
+constraint rho_stl_1 <= rho_1 + (1 - p_3[1]) * M;
+constraint rho_stl_1 >= rho_2 - (1 - p_3[2]) * M;
+constraint rho_stl_1 <= rho_2 + (1 - p_3[2]) * M;
+% end of Globally encoding
+% END OF STL ENCODING FOR rho_stl_1
+% BEGIN OF STL ENCODING FOR rho_stl_2
+var float: rho_stl_2;
+var float: rho_5;
+constraint rho_5 <= (sig_var_battery[1])-(70);
+constraint rho_5 >= (sig_var_battery[1])-(70);
+var float: rho_6;
+var float: rho_8;
+constraint rho_8 <= (sig_var_is_landing[1])-(1);
+constraint rho_8 >= (sig_var_is_landing[1])-(1);
+var float: rho_9;
+constraint rho_9 <= (1)-(sig_var_is_landing[1]);
+constraint rho_9 >= (1)-(sig_var_is_landing[1]);
+var float: rho_7;
+array[1..2] of var 0..1: p_10;
+constraint sum(p_10) = 1;
+constraint rho_7 <= rho_8;
+constraint rho_7 <= rho_9;
+constraint rho_7 >= rho_8 - (1 - p_10[1]) * M;
+constraint rho_7 <= rho_8 + (1 - p_10[1]) * M;
+constraint rho_7 >= rho_9 - (1 - p_10[2]) * M;
+constraint rho_7 <= rho_9 + (1 - p_10[2]) * M;
+var float: rho_12;
+constraint rho_12 <= (sig_var_is_landing[2])-(1);
+constraint rho_12 >= (sig_var_is_landing[2])-(1);
+var float: rho_13;
+constraint rho_13 <= (1)-(sig_var_is_landing[2]);
+constraint rho_13 >= (1)-(sig_var_is_landing[2]);
+var float: rho_11;
+array[1..2] of var 0..1: p_14;
+constraint sum(p_14) = 1;
+constraint rho_11 <= rho_12;
+constraint rho_11 <= rho_13;
+constraint rho_11 >= rho_12 - (1 - p_14[1]) * M;
+constraint rho_11 <= rho_12 + (1 - p_14[1]) * M;
+constraint rho_11 >= rho_13 - (1 - p_14[2]) * M;
+constraint rho_11 <= rho_13 + (1 - p_14[2]) * M;
+% Eventually encoding
+array[1..2] of var 0..1: p_15;
+constraint sum(p_15) = 1;
+constraint rho_6 >= rho_7;
+constraint rho_6 >= rho_11;
+constraint rho_6 >= rho_7 - (1 - p_15[1]) * M;
+constraint rho_6 <= rho_7 + (1 - p_15[1]) * M;
+constraint rho_6 >= rho_11 - (1 - p_15[2]) * M;
+constraint rho_6 <= rho_11 + (1 - p_15[2]) * M;
+% end of Eventually encoding
+var float: rho_4;
+array[1..2] of var 0..1: p_16;
+constraint sum(p_16) = 1;
+constraint rho_4 >= rho_5;
+constraint rho_4 >= rho_6;
+constraint rho_4 >= rho_5 - (1 - p_16[1]) * M;
+constraint rho_4 <= rho_5 + (1 - p_16[1]) * M;
+constraint rho_4 >= rho_6 - (1 - p_16[2]) * M;
+constraint rho_4 <= rho_6 + (1 - p_16[2]) * M;
+var float: rho_18;
+constraint rho_18 <= (sig_var_battery[2])-(70);
+constraint rho_18 >= (sig_var_battery[2])-(70);
+var float: rho_19;
+var float: rho_21;
+constraint rho_21 <= (sig_var_is_landing[2])-(1);
+constraint rho_21 >= (sig_var_is_landing[2])-(1);
+var float: rho_22;
+constraint rho_22 <= (1)-(sig_var_is_landing[2]);
+constraint rho_22 >= (1)-(sig_var_is_landing[2]);
+var float: rho_20;
+array[1..2] of var 0..1: p_23;
+constraint sum(p_23) = 1;
+constraint rho_20 <= rho_21;
+constraint rho_20 <= rho_22;
+constraint rho_20 >= rho_21 - (1 - p_23[1]) * M;
+constraint rho_20 <= rho_21 + (1 - p_23[1]) * M;
+constraint rho_20 >= rho_22 - (1 - p_23[2]) * M;
+constraint rho_20 <= rho_22 + (1 - p_23[2]) * M;
+var float: rho_25;
+constraint rho_25 <= (sig_var_is_landing[3])-(1);
+constraint rho_25 >= (sig_var_is_landing[3])-(1);
+var float: rho_26;
+constraint rho_26 <= (1)-(sig_var_is_landing[3]);
+constraint rho_26 >= (1)-(sig_var_is_landing[3]);
+var float: rho_24;
+array[1..2] of var 0..1: p_27;
+constraint sum(p_27) = 1;
+constraint rho_24 <= rho_25;
+constraint rho_24 <= rho_26;
+constraint rho_24 >= rho_25 - (1 - p_27[1]) * M;
+constraint rho_24 <= rho_25 + (1 - p_27[1]) * M;
+constraint rho_24 >= rho_26 - (1 - p_27[2]) * M;
+constraint rho_24 <= rho_26 + (1 - p_27[2]) * M;
+% Eventually encoding
+array[1..2] of var 0..1: p_28;
+constraint sum(p_28) = 1;
+constraint rho_19 >= rho_20;
+constraint rho_19 >= rho_24;
+constraint rho_19 >= rho_20 - (1 - p_28[1]) * M;
+constraint rho_19 <= rho_20 + (1 - p_28[1]) * M;
+constraint rho_19 >= rho_24 - (1 - p_28[2]) * M;
+constraint rho_19 <= rho_24 + (1 - p_28[2]) * M;
+% end of Eventually encoding
+var float: rho_17;
+array[1..2] of var 0..1: p_29;
+constraint sum(p_29) = 1;
+constraint rho_17 >= rho_18;
+constraint rho_17 >= rho_19;
+constraint rho_17 >= rho_18 - (1 - p_29[1]) * M;
+constraint rho_17 <= rho_18 + (1 - p_29[1]) * M;
+constraint rho_17 >= rho_19 - (1 - p_29[2]) * M;
+constraint rho_17 <= rho_19 + (1 - p_29[2]) * M;
+% Globally encoding
+array[1..2] of var 0..1: p_30;
+constraint sum(p_30) = 1;
+constraint rho_stl_2 <= rho_4;
+constraint rho_stl_2 <= rho_17;
+constraint rho_stl_2 >= rho_4 - (1 - p_30[1]) * M;
+constraint rho_stl_2 <= rho_4 + (1 - p_30[1]) * M;
+constraint rho_stl_2 >= rho_17 - (1 - p_30[2]) * M;
+constraint rho_stl_2 <= rho_17 + (1 - p_30[2]) * M;
+% end of Globally encoding
+% END OF STL ENCODING FOR rho_stl_2
+% BEGIN OF STL ENCODING FOR rho_stl_2_w
+var float: delta_battery;
+var float: rho_stl_2_w;
+var float: rho_32;
+constraint delta_battery >= 0;
+constraint delta_battery <= 30.0;
+constraint rho_32 <= ((sig_var_battery[1])-(70))+(delta_battery);
+constraint rho_32 >= ((sig_var_battery[1])-(70))+(delta_battery);
+var float: rho_33;
+var float: rho_35;
+constraint rho_35 <= (sig_var_is_landing[1])-(1);
+constraint rho_35 >= (sig_var_is_landing[1])-(1);
+var float: rho_36;
+constraint rho_36 <= (1)-(sig_var_is_landing[1]);
+constraint rho_36 >= (1)-(sig_var_is_landing[1]);
+var float: rho_34;
+array[1..2] of var 0..1: p_37;
+constraint sum(p_37) = 1;
+constraint rho_34 <= rho_35;
+constraint rho_34 <= rho_36;
+constraint rho_34 >= rho_35 - (1 - p_37[1]) * M;
+constraint rho_34 <= rho_35 + (1 - p_37[1]) * M;
+constraint rho_34 >= rho_36 - (1 - p_37[2]) * M;
+constraint rho_34 <= rho_36 + (1 - p_37[2]) * M;
+var float: rho_39;
+constraint rho_39 <= (sig_var_is_landing[2])-(1);
+constraint rho_39 >= (sig_var_is_landing[2])-(1);
+var float: rho_40;
+constraint rho_40 <= (1)-(sig_var_is_landing[2]);
+constraint rho_40 >= (1)-(sig_var_is_landing[2]);
+var float: rho_38;
+array[1..2] of var 0..1: p_41;
+constraint sum(p_41) = 1;
+constraint rho_38 <= rho_39;
+constraint rho_38 <= rho_40;
+constraint rho_38 >= rho_39 - (1 - p_41[1]) * M;
+constraint rho_38 <= rho_39 + (1 - p_41[1]) * M;
+constraint rho_38 >= rho_40 - (1 - p_41[2]) * M;
+constraint rho_38 <= rho_40 + (1 - p_41[2]) * M;
+% Eventually encoding
+array[1..2] of var 0..1: p_42;
+constraint sum(p_42) = 1;
+constraint rho_33 >= rho_34;
+constraint rho_33 >= rho_38;
+constraint rho_33 >= rho_34 - (1 - p_42[1]) * M;
+constraint rho_33 <= rho_34 + (1 - p_42[1]) * M;
+constraint rho_33 >= rho_38 - (1 - p_42[2]) * M;
+constraint rho_33 <= rho_38 + (1 - p_42[2]) * M;
+% end of Eventually encoding
+var float: rho_31;
+array[1..2] of var 0..1: p_43;
+constraint sum(p_43) = 1;
+constraint rho_31 >= rho_32;
+constraint rho_31 >= rho_33;
+constraint rho_31 >= rho_32 - (1 - p_43[1]) * M;
+constraint rho_31 <= rho_32 + (1 - p_43[1]) * M;
+constraint rho_31 >= rho_33 - (1 - p_43[2]) * M;
+constraint rho_31 <= rho_33 + (1 - p_43[2]) * M;
+var float: rho_45;
+constraint delta_battery >= 0;
+constraint delta_battery <= 30.0;
+constraint rho_45 <= ((sig_var_battery[2])-(70))+(delta_battery);
+constraint rho_45 >= ((sig_var_battery[2])-(70))+(delta_battery);
+var float: rho_46;
+var float: rho_48;
+constraint rho_48 <= (sig_var_is_landing[2])-(1);
+constraint rho_48 >= (sig_var_is_landing[2])-(1);
+var float: rho_49;
+constraint rho_49 <= (1)-(sig_var_is_landing[2]);
+constraint rho_49 >= (1)-(sig_var_is_landing[2]);
+var float: rho_47;
+array[1..2] of var 0..1: p_50;
+constraint sum(p_50) = 1;
+constraint rho_47 <= rho_48;
+constraint rho_47 <= rho_49;
+constraint rho_47 >= rho_48 - (1 - p_50[1]) * M;
+constraint rho_47 <= rho_48 + (1 - p_50[1]) * M;
+constraint rho_47 >= rho_49 - (1 - p_50[2]) * M;
+constraint rho_47 <= rho_49 + (1 - p_50[2]) * M;
+var float: rho_52;
+constraint rho_52 <= (sig_var_is_landing[3])-(1);
+constraint rho_52 >= (sig_var_is_landing[3])-(1);
+var float: rho_53;
+constraint rho_53 <= (1)-(sig_var_is_landing[3]);
+constraint rho_53 >= (1)-(sig_var_is_landing[3]);
+var float: rho_51;
+array[1..2] of var 0..1: p_54;
+constraint sum(p_54) = 1;
+constraint rho_51 <= rho_52;
+constraint rho_51 <= rho_53;
+constraint rho_51 >= rho_52 - (1 - p_54[1]) * M;
+constraint rho_51 <= rho_52 + (1 - p_54[1]) * M;
+constraint rho_51 >= rho_53 - (1 - p_54[2]) * M;
+constraint rho_51 <= rho_53 + (1 - p_54[2]) * M;
+% Eventually encoding
+array[1..2] of var 0..1: p_55;
+constraint sum(p_55) = 1;
+constraint rho_46 >= rho_47;
+constraint rho_46 >= rho_51;
+constraint rho_46 >= rho_47 - (1 - p_55[1]) * M;
+constraint rho_46 <= rho_47 + (1 - p_55[1]) * M;
+constraint rho_46 >= rho_51 - (1 - p_55[2]) * M;
+constraint rho_46 <= rho_51 + (1 - p_55[2]) * M;
+% end of Eventually encoding
+var float: rho_44;
+array[1..2] of var 0..1: p_56;
+constraint sum(p_56) = 1;
+constraint rho_44 >= rho_45;
+constraint rho_44 >= rho_46;
+constraint rho_44 >= rho_45 - (1 - p_56[1]) * M;
+constraint rho_44 <= rho_45 + (1 - p_56[1]) * M;
+constraint rho_44 >= rho_46 - (1 - p_56[2]) * M;
+constraint rho_44 <= rho_46 + (1 - p_56[2]) * M;
+% Globally encoding
+array[1..2] of var 0..1: p_57;
+constraint sum(p_57) = 1;
+constraint rho_stl_2_w <= rho_31;
+constraint rho_stl_2_w <= rho_44;
+constraint rho_stl_2_w >= rho_31 - (1 - p_57[1]) * M;
+constraint rho_stl_2_w <= rho_31 + (1 - p_57[1]) * M;
+constraint rho_stl_2_w >= rho_44 - (1 - p_57[2]) * M;
+constraint rho_stl_2_w <= rho_44 + (1 - p_57[2]) * M;
+% end of Globally encoding
+% END OF STL ENCODING FOR rho_stl_2_w
+constraint rho_stl_2_w > 0;
+solve minimize (rho_stl_2_w - rho_stl_2);
+
+{
+  "sig_var_remaining_range_upon_delivery" : [273.0149542936803, 273.0149542936803, 273.0149542936803],
+  "sig_var_is_landing" : [0.0, 0.0, 0.0],
+  "sig_var_battery" : [50.0, 50.0, 50.0],
+  "sig_var_drone_status" : [2, 2, 2],
+  "vel_x" : 0.0,
+  "vel_y" : 0.0,
+  "sig_var_loc_x" : [0.0, 0.0, 0.0],
+  "sig_var_loc_y" : [0.0, 0.0, 0.0],
+  "action_vel_x" : [0.0, 0.0],
+  "action_vel_y" : [0.0, 0.0],
+  "sig_var_estimated_range" : [500.0, 500.0, 500.0],
+  "sig_var_distance_to_hospital" : [226.9850457063197, 226.9850457063197, 226.9850457063197],
+  "rho_stl_1" : 273.0149542936803,
+  "rho_1" : 273.0149542936803,
+  "rho_2" : 273.0149542936803,
+  "p_3" : [0, 1],
+  "rho_stl_2" : -1.0,
+  "rho_5" : -20.0,
+  "rho_6" : -1.0,
+  "rho_8" : -1.0,
+  "rho_9" : 1.0,
+  "rho_7" : -1.0,
+  "p_10" : [1, 0],
+  "rho_12" : -1.0,
+  "rho_13" : 1.0,
+  "rho_11" : -1.0,
+  "p_14" : [1, 0],
+  "p_15" : [0, 1],
+  "rho_4" : -1.0,
+  "p_16" : [0, 1],
+  "rho_18" : -20.0,
+  "rho_19" : -1.0,
+  "rho_21" : -1.0,
+  "rho_22" : 1.0,
+  "rho_20" : -1.0,
+  "p_23" : [1, 0],
+  "rho_25" : -1.0,
+  "rho_26" : 1.0,
+  "rho_24" : -1.0,
+  "p_27" : [1, 0],
+  "p_28" : [0, 1],
+  "rho_17" : -1.0,
+  "p_29" : [0, 1],
+  "p_30" : [0, 1],
+  "delta_battery" : 20.00000099999977,
+  "rho_stl_2_w" : 9.999997701015673e-07,
+  "rho_32" : 9.999997701015673e-07,
+  "rho_33" : -1.0,
+  "rho_35" : -1.0,
+  "rho_36" : 1.0,
+  "rho_34" : -1.0,
+  "p_37" : [1, 0],
+  "rho_39" : -1.0,
+  "rho_40" : 1.0,
+  "rho_38" : -1.0,
+  "p_41" : [1, 0],
+  "p_42" : [0, 1],
+  "rho_31" : 9.999997701015673e-07,
+  "p_43" : [1, 0],
+  "rho_45" : 9.999997701015673e-07,
+  "rho_46" : -1.0,
+  "rho_48" : -1.0,
+  "rho_49" : 1.0,
+  "rho_47" : -1.0,
+  "p_50" : [1, 0],
+  "rho_52" : -1.0,
+  "rho_53" : 1.0,
+  "rho_51" : -1.0,
+  "p_54" : [1, 0],
+  "p_55" : [0, 1],
+  "rho_44" : 9.999997701015673e-07,
+  "p_56" : [1, 0],
+  "p_57" : [0, 1]
+}
+----------
+==========
+
+Academic license - for non-commercial use only - expires 2023-07-08
+Result:
+{
+  "sig_var_remaining_range_upon_delivery" : [273.0149542936803, 273.0149542936803, 273.0149542936803],
+  "sig_var_is_landing" : [0.0, 0.0, 0.0],
+  "sig_var_battery" : [50.0, 50.0, 50.0],
+  "sig_var_drone_status" : [2, 2, 2],
+  "vel_x" : 0.0,
+  "vel_y" : 0.0,
+  "sig_var_loc_x" : [0.0, 0.0, 0.0],
+  "sig_var_loc_y" : [0.0, 0.0, 0.0],
+  "action_vel_x" : [0.0, 0.0],
+  "action_vel_y" : [0.0, 0.0],
+  "sig_var_estimated_range" : [500.0, 500.0, 500.0],
+  "sig_var_distance_to_hospital" : [226.9850457063197, 226.9850457063197, 226.9850457063197],
+  "rho_stl_1" : 273.0149542936803,
+  "rho_1" : 273.0149542936803,
+  "rho_2" : 273.0149542936803,
+  "p_3" : [0, 1],
+  "rho_stl_2" : -1.0,
+  "rho_5" : -20.0,
+  "rho_6" : -1.0,
+  "rho_8" : -1.0,
+  "rho_9" : 1.0,
+  "rho_7" : -1.0,
+  "p_10" : [1, 0],
+  "rho_12" : -1.0,
+  "rho_13" : 1.0,
+  "rho_11" : -1.0,
+  "p_14" : [1, 0],
+  "p_15" : [0, 1],
+  "rho_4" : -1.0,
+  "p_16" : [0, 1],
+  "rho_18" : -20.0,
+  "rho_19" : -1.0,
+  "rho_21" : -1.0,
+  "rho_22" : 1.0,
+  "rho_20" : -1.0,
+  "p_23" : [1, 0],
+  "rho_25" : -1.0,
+  "rho_26" : 1.0,
+  "rho_24" : -1.0,
+  "p_27" : [1, 0],
+  "p_28" : [0, 1],
+  "rho_17" : -1.0,
+  "p_29" : [0, 1],
+  "p_30" : [0, 1],
+  "delta_battery" : 20.00000099999977,
+  "rho_stl_2_w" : 9.999997701015673e-07,
+  "rho_32" : 9.999997701015673e-07,
+  "rho_33" : -1.0,
+  "rho_35" : -1.0,
+  "rho_36" : 1.0,
+  "rho_34" : -1.0,
+  "p_37" : [1, 0],
+  "rho_39" : -1.0,
+  "rho_40" : 1.0,
+  "rho_38" : -1.0,
+  "p_41" : [1, 0],
+  "p_42" : [0, 1],
+  "rho_31" : 9.999997701015673e-07,
+  "p_43" : [1, 0],
+  "rho_45" : 9.999997701015673e-07,
+  "rho_46" : -1.0,
+  "rho_48" : -1.0,
+  "rho_49" : 1.0,
+  "rho_47" : -1.0,
+  "p_50" : [1, 0],
+  "rho_52" : -1.0,
+  "rho_53" : 1.0,
+  "rho_51" : -1.0,
+  "p_54" : [1, 0],
+  "p_55" : [0, 1],
+  "rho_44" : 9.999997701015673e-07,
+  "p_56" : [1, 0],
+  "p_57" : [0, 1]
+}
+----------
+==========
+
+273.0149542936803
+20.00000099999977
+WEAKENING has been set to = 20.00000099999977
+[delivery planning] distance to destination: 226.9695566409563
+[delivery planning] curr lat: 40.4447554 curr lon-79.9451959
+[safe landing] remaining battery = 41.0
+[safe landing] Landing threshold (49.99999900000023) reached. Force landing now!
+[main] resolution failed!
+landing
+[main] state: ON_GROUND
+[main] drone has landed. Exiting the program.

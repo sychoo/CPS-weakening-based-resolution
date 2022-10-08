@@ -1,0 +1,20 @@
+<<x > 10>>(delta_x, 5)
+//
+// note that usage of weakening operator is
+// <<atom>>(decision_var, max_weakening)
+// for example
+//
+// in this case, it means that the requirement x > 10 can be weakened
+// maximally to x > 5. 5 is the max value delta_x can have
+//
+// delta_x must be greater than 0
+//
+// internally, the parser normalize the atom to x - 10 > 0 (standard format of atom in STL)
+// then add the delta_x to the left hand side
+//
+// x - 10 + delta_x > 0
+//
+// when delta_x = 5
+// the atom turns into
+//
+// x - 5 > 0

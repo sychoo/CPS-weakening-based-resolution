@@ -1,0 +1,9 @@
+// Delivery Planning (DP)
+G[0,1](remaining_range_upon_delivery >= 0)
+
+// Safe Landing (SL)
+G[0,1]((<<battery <= 90>>(delta_battery, 30.0)) -> (F[0,1](is_landing = 1)))
+
+// G[0,1] (not <<battery > 10>>(delta_battery, 8.0)) \/ (F[0,1](is_landed = 1))
+// define weakening of implication
+// not <<p>>

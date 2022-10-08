@@ -1,0 +1,11 @@
+F[0, <<2>>(delta_time_r, 3)](x <= -4)
+//
+// weakenRight
+//
+// test with 2.sig
+// original rho = -5
+//
+// weaken the time bound to G[0, 2] (inclusive)
+// meaning delta_time_r = 3
+// can achieve satisfaction
+// with the weakened requirement robustness = 1

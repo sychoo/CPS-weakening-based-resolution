@@ -1,0 +1,2 @@
+// Safe Landing (SL)
+G[0,1]((battery <= 40) -> (F[0,1](is_landing = 1)))

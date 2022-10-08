@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: edu.cmu.stl.encoder.ints.util.MainTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.518 s - in edu.cmu.stl.encoder.ints.util.MainTest

@@ -1,0 +1,7 @@
+x + 1 > 5
+//
+// expected normalized form:
+// x + 1 - (5) > 0
+//
+// robustness value:
+// rho = x + 1 - (5) = 3

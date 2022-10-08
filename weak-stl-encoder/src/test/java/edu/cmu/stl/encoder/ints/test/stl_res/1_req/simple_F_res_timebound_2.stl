@@ -1,0 +1,10 @@
+F[<<4>>(delta_time_l, 2), 5](x > 0)
+//
+// weakenRight
+//
+// test with 2.sig
+// original rho = -4
+//
+// weaken the time bound to G[0, 2] (inclusive)
+// meaning delta_time_r = 2
+// can achieve satisfaction

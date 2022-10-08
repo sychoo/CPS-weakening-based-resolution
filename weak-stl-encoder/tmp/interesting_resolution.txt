@@ -1,0 +1,121 @@
+rockita@SATURN stl % make organ
+mvn exec:java -Dexec.mainClass="edu.cmu.stl.mavsdk.case_study.organ_delivery.OrganDeliveryMain"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< edu.cmu.stl:stl >---------------------------
+[INFO] Building stl 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:3.0.0:java (default-cli) @ stl ---
+Starting Organ Delivery Case Study...
+arming and taking off
+starting offboard mode
+[delivery planning] distance to destination: 230.78972900984675
+[delivery planning] curr lat: 40.4447299 curr lon-79.9452534
+^Cmake: *** [organ] Error 130
+
+rockita@SATURN stl % make organ
+mvn exec:java -Dexec.mainClass="edu.cmu.stl.mavsdk.case_study.organ_delivery.OrganDeliveryMain"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< edu.cmu.stl:stl >---------------------------
+[INFO] Building stl 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:3.0.0:java (default-cli) @ stl ---
+Starting Organ Delivery Case Study...
+arming and taking off
+[WARNING] 
+java.lang.RuntimeException: io.mavsdk.action.Action$ActionException: COMMAND_DENIED: Command Denied
+    at io.reactivex.internal.util.ExceptionHelper.wrapOrThrow (ExceptionHelper.java:46)
+    at io.reactivex.internal.observers.BlockingMultiObserver.blockingGet (BlockingMultiObserver.java:93)
+    at io.reactivex.Completable.blockingAwait (Completable.java:1227)
+    at edu.cmu.stl.mavsdk.utils.DroneAction.armAndTakeoff (DroneAction.java:24)
+    at edu.cmu.stl.mavsdk.case_study.organ_delivery.OrganDeliveryMain.run (OrganDeliveryMain.java:57)
+    at edu.cmu.stl.mavsdk.case_study.organ_delivery.OrganDeliveryMain.main (OrganDeliveryMain.java:39)
+    at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:254)
+    at java.lang.Thread.run (Thread.java:833)
+Caused by: io.mavsdk.action.Action$ActionException: COMMAND_DENIED: Command Denied
+    at io.mavsdk.action.Action$1.onNext (Action.java:324)
+    at io.mavsdk.action.Action$1.onNext (Action.java:317)
+    at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onMessage (ClientCalls.java:466)
+    at io.grpc.internal.DelayedClientCall$DelayedListener.onMessage (DelayedClientCall.java:447)
+    at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1MessagesAvailable.runInternal (ClientCallImpl.java:661)
+    at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1MessagesAvailable.runInContext (ClientCallImpl.java:646)
+    at io.grpc.internal.ContextRunnable.run (ContextRunnable.java:37)
+    at io.grpc.internal.SerializingExecutor.run (SerializingExecutor.java:133)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1136)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:635)
+    at java.lang.Thread.run (Thread.java:833)
+^C^[[Amake: *** [organ] Error 130
+
+rockita@SATURN stl % make organ
+mvn exec:java -Dexec.mainClass="edu.cmu.stl.mavsdk.case_study.organ_delivery.OrganDeliveryMain"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< edu.cmu.stl:stl >---------------------------
+[INFO] Building stl 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:3.0.0:java (default-cli) @ stl ---
+Starting Organ Delivery Case Study...
+arming and taking off
+starting offboard mode
+[delivery planning] distance to destination: 244.42971532878914
+[delivery planning] curr lat: 40.4446818 curr lon-79.945438
+[safe landing] remaining battery = 100.0
+starting commands: N:-1.2345645 E:4.845188 D:0.0 Yaw:0.0
+[main] state: IN_AIR
+[delivery planning] distance to destination: 228.18021103577362
+[delivery planning] curr lat: 40.4446343 curr lon-79.94525569999999
+[safe landing] remaining battery = 100.0
+starting commands: N:-1.206756 E:4.852189 D:0.0 Yaw:0.0
+[main] state: IN_AIR
+[delivery planning] distance to destination: 207.02348403615932
+[delivery planning] curr lat: 40.444596499999996 curr lon-79.9450104
+[safe landing] remaining battery = 97.99999
+starting commands: N:-1.2285801 E:4.8467093 D:0.0 Yaw:0.0
+[main] state: IN_AIR
+[delivery planning] distance to destination: 186.76065113126145
+[delivery planning] curr lat: 40.4445535 curr lon-79.9447777
+[safe landing] remaining battery = 94.0
+starting commands: N:-1.2338816 E:4.845362 D:0.0 Yaw:0.0
+[main] state: IN_AIR
+[delivery planning] distance to destination: 166.7656071069602
+[delivery planning] curr lat: 40.4445074 curr lon-79.94454929999999
+[safe landing] remaining battery = 90.0
+starting commands: N:-1.2281448 E:4.8468194 D:0.0 Yaw:0.0
+[main] state: IN_AIR
+[delivery planning] distance to destination: 146.68038922643234
+[delivery planning] curr lat: 40.4444634 curr lon-79.9443191
+[safe landing] remaining battery = 85.99999
+[safe landing] Landing threshold (90.0) reached. Force landing now!
+[main] conflict detected! resolver invoked!
+Academic license - for non-commercial use only - expires 2023-07-08
+288.2604846792871
+7.00000099999977
+WEAKENING has been set to = 7.00000099999977
+[delivery planning] distance to destination: 130.64994619404612
+[delivery planning] curr lat: 40.4444282 curr lon-79.9441354
+[safe landing] remaining battery = 82.0
+[safe landing] Landing threshold (82.99999900000023) reached. Force landing now!
+[main] resolution failed!
+landing
+[main] state: LANDING
+[delivery planning] distance to destination: 118.1389559130537
+[delivery planning] curr lat: 40.4444035 curr lon-79.94399109999999
+[safe landing] remaining battery = 79.99999
+[safe landing] Landing threshold (82.99999900000023) reached. Force landing now!
+[main] conflict detected! resolver invoked!
+Academic license - for non-commercial use only - expires 2023-07-08
+226.9642578162994
+21.00000099999977
+WEAKENING has been set to = 21.00000099999977
+[delivery planning] distance to destination: 118.11226162746811
+[delivery planning] curr lat: 40.444404899999995 curr lon-79.9439903
+[safe landing] remaining battery = 68.0
+[safe landing] Landing threshold (68.99999900000023) reached. Force landing now!
+[main] resolution failed!
+landing
+[main] state: LANDING
+[main] drone has landed. Exiting the program.

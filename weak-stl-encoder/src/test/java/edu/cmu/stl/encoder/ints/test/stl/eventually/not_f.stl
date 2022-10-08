@@ -1,0 +1,5 @@
+not F[0, 2](x <= 10)
+// equiv to
+// G[0, 2](x > 10)
+// test with 1.sig
+// robustness = -9

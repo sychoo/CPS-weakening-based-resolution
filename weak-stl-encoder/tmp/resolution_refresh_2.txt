@@ -1,0 +1,65 @@
+rockita@SATURN stl % make organ
+mvn exec:java -Dexec.mainClass="edu.cmu.stl.mavsdk.case_study.organ_delivery.OrganDeliveryMain"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< edu.cmu.stl:stl >---------------------------
+[INFO] Building stl 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:3.0.0:java (default-cli) @ stl ---
+Starting Organ Delivery Case Study...
+arming and taking off
+starting offboard mode
+[delivery planning] distance to destination: 244.4570272041357
+[delivery planning] curr lat: 40.444681599999996 curr lon-79.9454384
+[safe landing] remaining battery = 100.0
+starting commands: N:-1.2339717 E:4.8453393 D:0.0 Yaw:0.0
+[main] state: IN_AIR
+[delivery planning] distance to destination: 228.31697293415445
+[delivery planning] curr lat: 40.4446345 curr lon-79.9452573
+[safe landing] remaining battery = 100.0
+starting commands: N:-1.2065201 E:4.8522477 D:0.0 Yaw:0.0
+[main] state: IN_AIR
+[delivery planning] distance to destination: 201.9953613714042
+[delivery planning] curr lat: 40.4445863 curr lon-79.9449525
+[safe landing] remaining battery = 96.0
+starting commands: N:-1.2310908 E:4.846072 D:0.0 Yaw:0.0
+[main] state: IN_AIR
+[delivery planning] distance to destination: 171.80198395089562
+[delivery planning] curr lat: 40.44452 curr lon-79.94460649999999
+[safe landing] remaining battery = 90.0
+starting commands: N:-1.232914 E:4.8456087 D:0.0 Yaw:0.0
+[main] state: IN_AIR
+[delivery planning] distance to destination: 141.60580150919526
+[delivery planning] curr lat: 40.444452999999996 curr lon-79.9442607
+[safe landing] remaining battery = 84.0
+[safe landing] Landing threshold (90.0) reached. Force landing now!
+[main] conflict detected! resolver invoked!
+Academic license - for non-commercial use only - expires 2023-07-08
+693.1734219714197
+10.00000099999977
+WEAKENING has been set to = 10.00000099999977
+[delivery planning] distance to destination: 115.54911433875944
+[delivery planning] curr lat: 40.4443949 curr lon-79.94396239999999
+[safe landing] remaining battery = 79.99999
+[safe landing] Landing threshold (79.99999900000023) reached. Force landing now!
+[main] resolution failed!
+landing
+[main] state: LANDING
+[delivery planning] distance to destination: 104.41141996132211
+[delivery planning] curr lat: 40.444374499999995 curr lon-79.9438334
+[safe landing] remaining battery = 66.99999
+[safe landing] Landing threshold (79.99999900000023) reached. Force landing now!
+[main] conflict detected! resolver invoked!
+Academic license - for non-commercial use only - expires 2023-07-08
+524.9323578463271
+27.00000099999977
+WEAKENING has been set to = 27.00000099999977
+[delivery planning] distance to destination: 105.06485338284283
+[delivery planning] curr lat: 40.4443759 curr lon-79.9438409
+[safe landing] remaining battery = 61.0
+[safe landing] Landing threshold (62.99999900000023) reached. Force landing now!
+[main] resolution failed!
+landing
+[main] state: ON_GROUND
+[main] drone has landed. Exiting the program.

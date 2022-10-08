@@ -1,0 +1,7 @@
+G[1,1](<<distance2bound > 20>>(delta_bound, 18.0)) // boundary enforcer
+G[1,1](<<distance2follower > 10>>(delta_runaway, 8.0)) // runaway enforcer
+
+// note that the following does not ensure the postivity of the robustness value
+//G[0,1](distance2bound > 10) // boundary enforcer
+//G[0,1](distance2follower > 10) // runaway enforcer
+

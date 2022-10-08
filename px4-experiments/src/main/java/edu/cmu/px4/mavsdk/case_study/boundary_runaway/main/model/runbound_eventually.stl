@@ -1,0 +1,5 @@
+G[0,1]((distance2follower <= 10) -> (F[0,1](<<distance2follower > 10>>(delta_runaway, 8.0))))
+G[0,1]((distance2bound <= 20) -> (F[0,1](<<distance2bound > 10>>(delta_bound, 18.0))))
+
+//G[1,1](<<distance2bound > 20>>(delta_bound, 18.0)) // boundary enforcer
+//G[1,1](<<distance2follower > 10>>(delta_runaway, 8.0)) // runaway enforcer

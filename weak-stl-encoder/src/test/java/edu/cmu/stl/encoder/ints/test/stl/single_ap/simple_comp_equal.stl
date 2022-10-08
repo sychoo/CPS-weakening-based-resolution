@@ -1,0 +1,4 @@
+//x >= 0 /\ x <= 0
+x = 0
+// test with 0.sig
+// robustness rho = -7
