@@ -1,0 +1,10 @@
+x + 1 * 5 + 8 + 9 + 10 > 1 * y + 3 * 5 + 8
+/*
+  reduction:
+  x + 5 + 8 + 9 + 10 > y + 15 + 8
+  x + 32 > y + 23
+  x - y + 9 > 0 (normalized form)
+*/
+
+// tested with 0.sig
+// robustness rho = -1 + 9 = 8

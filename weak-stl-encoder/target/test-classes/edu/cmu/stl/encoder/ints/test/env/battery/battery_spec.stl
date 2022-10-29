@@ -1,0 +1,3 @@
+G[0,3](<<battery > 10>>(delta_battery, 0)) // UNSAT
+//G[0,3](<<battery > 10>>(delta_battery, 5))
+G[0, <<3>>(delta_r, 3)](battery > 10)

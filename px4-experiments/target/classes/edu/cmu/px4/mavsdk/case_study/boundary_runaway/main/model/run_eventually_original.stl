@@ -1,0 +1,1 @@
+G[0,1]((distance2follower <= 10) -> (F[0,1](distance2follower > 10)))

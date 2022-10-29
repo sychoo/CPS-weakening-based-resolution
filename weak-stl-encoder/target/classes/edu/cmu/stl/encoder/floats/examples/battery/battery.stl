@@ -1,0 +1,5 @@
+// battery.stl
+// G[0,1](<<battery >= 110.0>>(delta_battery, 10.1))
+G[0,3](<<battery >= 110.0>>(delta_battery, 10.1))
+
+//G[0,1]()

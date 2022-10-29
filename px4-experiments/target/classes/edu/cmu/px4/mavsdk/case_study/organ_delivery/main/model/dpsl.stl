@@ -1,0 +1,5 @@
+// Delivery Planning (DP)
+G[0,1](remaining_range_upon_delivery >= 0)
+
+// Safe Landing (SL)
+G[0,1]((<<battery <= 40>>(delta_battery, 20.0)) -> (F[0,1](is_landing = 1)))

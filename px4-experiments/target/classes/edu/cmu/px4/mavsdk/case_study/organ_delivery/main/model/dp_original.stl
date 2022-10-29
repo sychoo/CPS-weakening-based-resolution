@@ -1,0 +1,2 @@
+// Delivery Planning (DP)
+G[0,1](remaining_range_upon_delivery >= 0)

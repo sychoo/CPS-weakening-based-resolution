@@ -1,0 +1,2 @@
+// Delivery Planning (DP)
+G[0,1]((speed * mission_time_left) >= distance_to_hospital)

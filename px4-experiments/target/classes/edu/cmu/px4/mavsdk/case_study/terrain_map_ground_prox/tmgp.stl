@@ -1,0 +1,15 @@
+// actual requirement used in this demo
+G[1,2](<<d2g >= 13>>(delta_ground, 2.0)) // ground prox
+G[1,2](<<d2g <= 10>>(delta_map, 2.0)) // terrain map
+
+//G[0,2](<<d2g >= 13>>(delta_ground, 20.0)) // ground prox
+//G[0,2](<<d2g <= 10>>(delta_map, 20.0)) // terrain map
+
+
+//G[0,1]((d2g < 13) -> (F[0,1](<<d2g >= 13>>(delta_ground, 2.0)))) // ground prox
+//G[0,1]((d2g > 10) -> (F[0,1](<<d2g <= 10>>(delta_map, 2.0)))) // ground prox
+
+// one potential solution is relax the globally time bound but doesn't work as of now.
+// desired requirements
+//G[<<0>>(delta_time_ground, 1),2](<<d2g >= 13>>(delta_ground, 2.0)) // ground prox
+//G[<<0>>(delta_time_ground, 1),2](<<d2g <= 10>>(delta_map, 2.0)) // terrain map

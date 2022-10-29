@@ -1,0 +1,7 @@
+x > 0 <-> y > 0
+// will be converted to 
+//
+// (not (x > 0) \/ (y > 0)) /\ (not (y > 0) \/ (x > 0))
+//
+// test with 0.sig
+// robustness rho = 7

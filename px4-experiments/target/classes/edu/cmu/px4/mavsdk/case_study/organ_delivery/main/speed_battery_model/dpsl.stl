@@ -1,0 +1,8 @@
+// Delivery Planning (DP)
+G[0,2](<<current_speed_necessary_speed_diff > 0>>(delta_speed, 2.0))
+
+// Safe Landing (SL)
+G[0,1]((<<battery <= 40>>(delta_battery, 20.0)) -> (F[0,1](is_landing = 1)))
+
+// previous DP
+//G[0,1]((speed * mission_time_left) >= distance_to_hospital)
